@@ -6,5 +6,14 @@
     "helloWorld": "Hello World!",
     "@helloWorld": {
         "description": "The programmer greeting"
+    },
+    "hello" : "Hello {username}",
+    "@hello" : {
+        "description": "A welcome message",
+        "placeholders": {
+            "username": {
+                "type": "String"
+            }
+        }
     }
 }

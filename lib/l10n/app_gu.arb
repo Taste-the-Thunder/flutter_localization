@@ -1,4 +1,5 @@
 {
     "language": "ગુજરાતી",
-    "helloWorld": "હેલો વિશ્વ!"
+    "helloWorld": "હેલો વિશ્વ!",
+    "hello" : "નમસ્તે {username}"
 }

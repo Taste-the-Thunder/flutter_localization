@@ -55,7 +55,6 @@ class _MyHomePageState extends State<MyHomePage> {
         title: Text(widget.title),
         actions: [
           LanguagePicker(),
-          SizedBox(width: 32,)
         ],
       ),
       body: Center(
@@ -66,6 +65,8 @@ class _MyHomePageState extends State<MyHomePage> {
             Text(AppLocalizations.of(context)!.language),
             SizedBox(height: 8),
             Text(AppLocalizations.of(context)!.helloWorld),
+            SizedBox(height: 8),
+            Text(AppLocalizations.of(context)!.hello('Dhruvin Prajapati')),
           ],
         ),
       ),
