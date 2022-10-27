@@ -6,4 +6,15 @@ class L10n {
     const Locale('hi'),
     const Locale('gu')
   ];
+  static String getflag(String code){
+    switch (code) {
+      case 'hi':
+        return '🇮🇳';
+      case 'gu':
+        return '🇮🇳';
+      case 'en':
+      default:
+        return '🇦🇺';
+    }
+  }
 }
