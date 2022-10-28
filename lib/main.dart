@@ -18,23 +18,25 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ChangeNotifierProvider(
-      create: (context) => LocaleProvider(),
-      builder: (context, child) {
-        final provider = Provider.of<LocaleProvider>(context);
-        return MaterialApp(
-            title: 'Flutter Demo',
-            theme: ThemeData( primarySwatch: Colors.blue, ),
-        locale: provider.locale,
-        localizationsDelegates: [
-          AppLocalizations.delegate,
-          GlobalMaterialLocalizations.delegate,
-          GlobalWidgetsLocalizations.delegate,
-          GlobalCupertinoLocalizations.delegate,
-        ],
-          supportedLocales: L10n.all,
-          home: const MyHomePage(title: 'Flutter'), );
-      }
-    );
+        create: (context) => LocaleProvider(),
+        builder: (context, child) {
+          final provider = Provider.of<LocaleProvider>(context);
+          return MaterialApp(
+            title: 'Flutter Local',
+            theme: ThemeData(
+              primarySwatch: Colors.blue,
+            ),
+            locale: provider.locale,
+            localizationsDelegates: [
+              AppLocalizations.delegate,
+              GlobalMaterialLocalizations.delegate,
+              GlobalWidgetsLocalizations.delegate,
+              GlobalCupertinoLocalizations.delegate,
+            ],
+            supportedLocales: L10n.all,
+            home: const MyHomePage(title: 'Flutter Local'),
+          );
+        });
   }
 }
 
@@ -47,7 +49,6 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
