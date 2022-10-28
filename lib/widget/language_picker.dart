@@ -3,6 +3,7 @@ import 'package:flutter_localization/l10n/l10n.dart';
 import 'package:provider/provider.dart';
 
 import '../provider/locale_provider.dart';
+import '../shared_preference.dart';
 
 class LanguageWidget extends StatelessWidget {
   const LanguageWidget({Key? key}) : super(key: key);
@@ -28,6 +29,13 @@ class LanguageWidget extends StatelessWidget {
 class LanguagePicker extends StatelessWidget {
   const LanguagePicker({Key? key}) : super(key: key);
 
+  void _changeLanguage(locale, context) async {
+    await AppSharedPreferences().setLocale(locale.languageCode);
+    final provider = Provider.of<LocaleProvider>(context, listen: false);
+    provider.setLocale(locale);
+  }
+
+
   @override
   Widget build(BuildContext context) {
     final provider = Provider.of<LocaleProvider>(context);
@@ -44,8 +52,7 @@ class LanguagePicker extends StatelessWidget {
               ),
               value: locale,
               onTap: (){
-                final provider = Provider.of<LocaleProvider>(context, listen: false);
-                provider.setLocale(locale);
+                _changeLanguage(locale, context);
               },
             );
           }).toList(),
