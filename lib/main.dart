@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:flutter_localization/provider/locale_provider.dart';
+import 'package:flutter_localization/widget/app_localizations_context.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:provider/provider.dart';
 
@@ -63,11 +64,11 @@ class _MyHomePageState extends State<MyHomePage> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             LanguageWidget(),
-            Text(AppLocalizations.of(context)!.language),
+            Text(context.loc.language),
             SizedBox(height: 8),
-            Text(AppLocalizations.of(context)!.helloWorld),
+            Text(context.loc.helloWorld),
             SizedBox(height: 8),
-            Text(AppLocalizations.of(context)!.hello('Dhruvin Prajapati')),
+            Text(context.loc.hello('Dhruvin Prajapati')),
           ],
         ),
       ),
